@@ -1,0 +1,1 @@
+  Lobsters::Application.config.secret_token = 'laskdj7647h2bgduusjh366ru2nbdhjjsbvufhgksadfhksdajhfksdajhdaksjhdkasjd6637612687678234ghjbvasdbads78iy23ghjk'

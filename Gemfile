@@ -7,8 +7,8 @@ gem "rake", "10.0.3"
 # Bundle edge Rails instead:
 # gem "rails", :git => "git://github.com/rails/rails.git"
 
-gem "mysql2", :git => "git://github.com/brianmario/mysql2.git"
-
+# gem "mysql2", :git => "git://github.com/brianmario/mysql2.git"
+gem "pg"
 gem "bcrypt-ruby", "3.0.0"
 
 gem "jquery-rails"
@@ -37,3 +37,5 @@ group :test, :development do
   gem "machinist"
   gem "sqlite3"
 end
+
+ruby "1.9.3"
