@@ -65,4 +65,22 @@ silence_warnings do
   ActionDispatch::ParamsParser::DEFAULT_PARSERS = {}
 end
 
+
+class << Rails.application
+  def domain
+    "develon.hack-inter.net"
+  end
+
+  def name
+    "Develon Hacker News"
+  end
+
+  # used as mailing list prefix and countinual prefix, cannot have spaces
+  def shortname
+    name.downcase.gsub(/[^a-z]/, "")
+  end
+
+end
+
+
 require "#{Rails.root}/lib/monkey"
