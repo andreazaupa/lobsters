@@ -5,10 +5,9 @@
 #   :enable_starttls_auto => false,
 # }
 
-
 ActionMailer::Base.smtp_settings = {
   :user_name => 'azaupa',
-  :password => File.read(File.join(Rails.root, "config", "sendgrid_password.txt")),
+  :password => "PASSWORD",
   :domain => 'develon.hack-inter.net',
   :address => 'smtp.sendgrid.net',
   :port => 587,
