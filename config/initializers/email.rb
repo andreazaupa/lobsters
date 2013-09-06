@@ -8,7 +8,7 @@
 
 ActionMailer::Base.smtp_settings = {
   :user_name => 'azaupa',
-  :password => File.read(File.join(Rails.root, "config", "sendgrid_password.txt")) rescue "",
+  :password => File.read(File.join(Rails.root, "config", "sendgrid_password.txt")),
   :domain => 'develon.hack-inter.net',
   :address => 'smtp.sendgrid.net',
   :port => 587,
