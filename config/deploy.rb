@@ -22,6 +22,8 @@ ssh_options[:forward_agent] = true
 desc "[internal] Updates the symlink for database.yml file to the just deployed release."
   task :symlink, :except => { :no_release => true } do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/sphynx.yml #{release_path}/config/sphynx.yml"
+    run "ln -nfs #{shared_path}/config/sendgrid_password.txt #{release_path}/config/sendgrid_password.txt"
   end
 end
   after "deploy:finalize_update", "db:symlink"
