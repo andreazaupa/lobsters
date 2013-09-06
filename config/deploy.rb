@@ -23,7 +23,7 @@ desc "[internal] Updates the symlink for database.yml file to the just deployed 
   task :symlink, :except => { :no_release => true } do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/config/sphynx.yml #{release_path}/config/sphynx.yml"
-    run "ln -nfs #{shared_path}/config/sendgrid_password.txt #{release_path}/config/sendgrid_password.txt"
+    run "cp #{shared_path}/config/initializers/email_conf.rb #{release_path}/config/initializers/email_conf.rb"
   end
 end
   after "deploy:finalize_update", "db:symlink"
