@@ -33,6 +33,7 @@ gem "thinking-sphinx", "2.0.12"
 gem "mail"
 
 group :test, :development do
+  gem 'rvm-capistrano'
   gem "capistrano"
   gem "rspec-rails", "~> 2.6"
   gem "machinist"
