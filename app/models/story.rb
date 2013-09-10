@@ -33,7 +33,7 @@ class Story < ActiveRecord::Base
 
     has created_at, :sortable => true
     has hotness, is_expired
-    has "(cast(upvotes as BIGINT) - cast(downvotes as BIGINT))",
+    has "(cast(upvotes as signed) - cast(downvotes as signed))",
       :as => :score, :type => :integer, :sortable => true
 
     set_property :field_weights => {
