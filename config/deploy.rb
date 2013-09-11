@@ -31,3 +31,14 @@ after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 
 
+set :whenever_command, "bundle exec whenever"
+set :whenever_environment, "production"
+set :whenever_identifier, defer { "#{application}" }
+
+require "whenever/capistrano"
+
+after "deploy:update_code", "whenever:clear_crontab"
+# Write the new cron jobs near the end.
+after "deploy:create_symlink", "whenever:update_crontab"
+# If anything goes wrong, undo.
+after "deploy:rollback", "whenever:update_crontab"
